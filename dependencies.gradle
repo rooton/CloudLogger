@@ -1,0 +1,42 @@
+ext.versions = [
+
+        compileSdkVersion: 30,
+        buildToolsVersion: "30.0.3",
+
+        minSdkVersion    : 16,
+        targetSdkVersion : 30,
+        versionCode      : 1,
+        versionName      : "alpha-0.1.0",
+
+        appName          : "Imtahan",
+
+        kotlin           : "1.4.30",
+        gradle           : "4.1.2",
+
+        appcompat        : "1.3.0-alpha02",
+        preferences      : "1.1.1",
+        viewpager        : "1.0.0",
+        recycler         : "1.1.0",
+        constraint       : "2.0.4",
+        navigation       : "2.3.2",
+        fragment         : "1.3.0-rc01",
+        defaultLifecycle : "2.3.0-rc01",
+        googleServices   : "4.3.3",
+        analytics        : "18.0.0",
+        crashlytics      : "17.3.0",
+        crashlyticsPlugin: "2.2.0",
+
+        sqlHelper        : "2.0.1",
+        jakson           : "2.10.1",
+        dagger           : "2.27",
+        rxJava3          : "3.0.4",
+        rxAndroid3       : "3.0.0",
+        okHttp           : "4.9.0",
+
+        // Tests
+        junit5           : "1.7.0.0",
+        spek             : "2.0.9",
+        jacoco           : "0.8.5",
+        mockitoKotlin    : "2.2.0",
+        mockitoInline    : "3.2.4" // allow to mock final classes
+]

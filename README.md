@@ -1,0 +1,1 @@
+[![Release](https://jitpack.io/v/com.cloudyapi/cloudlogger.svg?style=flat-square)](https://jitpack.io/#com.cloudyapi/cloudlogger)

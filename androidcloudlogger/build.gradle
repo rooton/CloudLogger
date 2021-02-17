@@ -1,0 +1,76 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'maven-publish'
+}
+
+android {
+    compileSdkVersion versions.compileSdkVersion
+    buildToolsVersion versions.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion versions.minSdkVersion
+        targetSdkVersion versions.targetSdkVersion
+        versionCode versions.versionCode
+        versionName versions.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
+    implementation "com.squareup.okhttp3:okhttp:$versions.okHttp"
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+
+
+// Because the components are created only during the afterEvaluate phase, you must
+// configure your publications using the afterEvaluate() lifecycle method.
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+
+                pom {
+                    name = 'CloudLogger Android Library'
+                    description = 'Android Remote Logger Library'
+                    url = 'https://logger.cloudyapi.com/'
+
+                    licenses {
+                        license {
+                            name = 'The Apache Software License, Version 2.0'
+                            url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        }
+                    }
+                }
+
+                // Applies the component for the release build variant.
+                from components.release
+
+                groupId = 'com.cloudyapi'
+                artifactId = 'android-cloud-logger'
+                version = versions.versionName
+            }
+        }
+    }
+}

@@ -1,0 +1,4 @@
+include ':androidcloudlogger'
+include ':cloudlogger'
+include ':app'
+rootProject.name = "CloudLoggerAndroid"
