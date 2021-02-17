@@ -1,1 +1,1 @@
-[![Release](https://jitpack.io/v/com.cloudyapi/cloudlogger.svg?style=flat-square)](https://jitpack.io/#com.cloudyapi/cloudlogger)
+[![Release](https://jitpack.io/v/com.cloudyapi/android-cloud-logger.svg?style=flat-square)](https://jitpack.io/#com.cloudyapi/android-cloud-logger)
